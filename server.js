@@ -1,23 +1,17 @@
 const inquirer = require('inquirer');
 
-// Import and require mysql2
 const mysql = require('mysql2');
 require("console.table");
 
-// Connect to database
 const db = mysql.createConnection(
     {
         host: '127.0.0.1',
-        // MySQL username,
         user: 'root',
-        // MySQL password
         password: 'Password1',
         database: 'employees_db'
     },
     console.log(`Connected to the courses_db database.`)
 );
-
-// TODO: Create an array of questions for user input
 const questions = [{
     type: 'list',
     name: 'menu',
@@ -62,7 +56,6 @@ const employeeQuestion = [{
 }
 ];
 
-// TODO: Create a function to initialize app
 function init() {
     inquirer.prompt(questions).then(answer => {
         if (answer.menu === "View all departments") {
@@ -148,7 +141,4 @@ function updateEmployee() {
 
 }
 
-
-
-// Function call to initialize app
 init();
