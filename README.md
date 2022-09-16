@@ -6,11 +6,10 @@ Developers frequently have to create interfaces that allow non-developers to vie
 
 
 ## Technologies
-- HTML5
-- CSS/Bootstrap Framework
 - Javascript/Node.js
 - Inquirer
 - MySQL
+- Console.table
 
 
 
