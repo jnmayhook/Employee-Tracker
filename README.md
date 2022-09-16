@@ -15,12 +15,12 @@ Developers frequently have to create interfaces that allow non-developers to vie
 
 
 ## Installation and Usage Instructions
-Open your terminal and type `npm install` or `npm i` to install the dependencies.  Then enter `npm start` to run the application.  Click the desired question and follow the prompts to view and manage departments, roles, and employees
+Open your terminal and type `npm install` or `npm i` to install the dependencies.  Then enter `npm start` to run the application.  Click the desired question and follow the prompts to view and manage departments, roles, and employees.
 
 
 
 ## Demo Video
-[Demo video in progress, coming soon..]()
+[Click here for a demo of the app run via the command line.](https://drive.google.com/file/d/1m_gaQ98-W33CHC8LTCZ6YkGeVYjAMg5N/view)
 
 
 

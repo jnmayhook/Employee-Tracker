@@ -23,7 +23,7 @@ const deptQuestion = [{
     name: 'department',
     message: 'Enter the name of the department'
 }]
-const rollQuestion = [{
+const roleQuestion = [{
     type: 'input',
     name: 'title',
     message: 'Enter the name for the role',
@@ -71,7 +71,7 @@ function init() {
             addDept()
         }
         else if (answer.menu === "Add a role") {
-            addRoll()
+            addRole()
         }
         else if (answer.menu === "Add an employee") {
             addEmployee()
@@ -104,38 +104,35 @@ function viewAllEmployees() {
 }
 function addDept() {
     inquirer.prompt(deptQuestion).then(answers => {
-        db.query("Insert into department (name) values(?)", [answers.department], (err, data) => {
+        db.query("INSERT into department (name) values(?)", [answers.department], (err, data) => {
             viewAllDepts();
         })
     })
 }
-function addRoll() {
-    inquirer.prompt(rollQuestion).then(answers => {
-        db.query("INSERT INTO role (title, salary, department_id) values(?, ?, ?)", [answers.title, answers.salary, answers.department_id], (err, data) => {
+function addRole() {
+    inquirer.prompt(roleQuestion).then(answers => {
+        db.query("INSERT into role (title, salary, department_id) values(?, ?, ?)", [answers.title, answers.salary, answers.department_id], (err, data) => {
             viewAllRoles();
         })
     })
 }
 function addEmployee() {
     inquirer.prompt(employeeQuestion).then(answers => {
-        db.query("INSERT INTO employee (first_name, last_name, role_id) VALUES(?, ?, ?)", [answers.first_name, answers.last_name, answers.role_id], (err, data) => {
+        db.query("INSERT into employee (first_name, last_name, role_id) VALUES(?, ?, ?)", [answers.first_name, answers.last_name, answers.role_id], (err, data) => {
             viewAllEmployees();
         })
     })
 
 }
 function updateEmployee() {
-    db.query("Select * from employee", (err, data) => {
-        // viewAllEmployees();
-
-        // console.log(data);
+    inquirer.prompt(employeeUpdateRole).then(answers => {
+        db.query("SELECT * from employee", (err, data) => {
         const employeeUpdateRole = [{
             type: 'list',
             name: 'employee_id',
             message: 'What employee role would you like to change',
-        //    choices: [{ name: "John", value: "1" }, { name: "John2", value: "2" }]
         }];
-        inquirer.prompt(employeeUpdateRole).then(answers => {
+        
         })
     })
 
